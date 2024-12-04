@@ -1,68 +1,109 @@
-from docx import Document
-from docx.shared import Pt, RGBColor
-from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية - حسين المهدي</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            margin-bottom: 10px;
+            color: #555;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>حسين المهدي</h1>
+            <h3>معلم أول دراسات اجتماعية</h3>
+        </header>
 
-# إنشاء مستند جديد
-doc = Document()
+        <section class="section">
+            <h2 class="section-title">الهدف المهني</h2>
+            <p>معلم دراسات اجتماعية ملتزم بتحسين التجربة التعليمية للطلاب من خلال استخدام التكنولوجيا الحديثة واستراتيجيات التعلم المبتكرة. أسعى للحصول على فرص تمكنني من تطوير مهاراتي والمساهمة في تعزيز التعليم في المؤسسات التعليمية المتقدمة.</p>
+        </section>
 
-# إعداد التنسيقات الأساسية
-style = doc.styles['Normal']
-style.font.name = 'Arial'
-style.font.size = Pt(12)
+        <section class="section">
+            <h2 class="section-title">المهارات الشخصية</h2>
+            <ul>
+                <li>دمج التكنولوجيا في الفصول الدراسية</li>
+                <li>استخدام أدوات الذكاء الاصطناعي لتقديم تعليم مخصص</li>
+                <li>مهارات فعالة في التواصل والتعاون</li>
+                <li>مدرب معتمد في الأكاديمية المهنية للمعلمين</li>
+            </ul>
+        </section>
 
-# إضافة العنوان الرئيسي
-title = doc.add_heading('السيرة الذاتية', level=1)
-title.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+        <section class="section">
+            <h2 class="section-title">الخبرات المهنية</h2>
+            <ul>
+                <li>معلم أول دراسات اجتماعية، مدرسة نخل الرسمية لغات (يناير 2023 – حتى الآن)</li>
+                <li>معلم تاريخ، مدرسة نخل الثانوية العامة المشتركة (2022 – 2023)</li>
+                <li>معلم دراسات اجتماعية، مدرسة رأس النقب للتعليم الأساسي (2015 – 2022)</li>
+                <li>معلم دراسات اجتماعية، مدارس الفؤاد الدولية (2013 – 2015)</li>
+            </ul>
+        </section>
 
-subtitle = doc.add_heading('حسين المهدي - معلم أول دراسات اجتماعية', level=2)
-subtitle.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
+        <section class="section">
+            <h2 class="section-title">المؤهلات العلمية</h2>
+            <ul>
+                <li>ليسانس الآداب والتربية، شعبة التاريخ، جامعة الزقازيق، مصر (2011)</li>
+                <li>تقدير: جيد جدًا (%83.29)</li>
+            </ul>
+        </section>
 
-# إضافة الأقسام
-def add_section(title_text, content):
-    doc.add_heading(title_text, level=2)
-    if isinstance(content, list):
-        for item in content:
-            doc.add_paragraph(f"- {item}")
-    else:
-        doc.add_paragraph(content)
+        <section class="section">
+            <h2 class="section-title">للتواصل</h2>
+            <ul>
+                <li>الهاتف: +201068717303</li>
+                <li>البريد الإلكتروني: Husseinxavi@gmail.com</li>
+                <li>العنوان: عمارة 192، الحي 15، العاشر من رمضان، الشرقية، مصر</li>
+                <li><a href="https://www.facebook.com/hussien.mahdy">صفحتي على الفيسبوك</a></li>
+            </ul>
+        </section>
 
-# الهدف المهني
-add_section('الهدف المهني', (
-    "معلم دراسات اجتماعية ملتزم بتحسين التجربة التعليمية للطلاب من خلال "
-    "استخدام التكنولوجيا الحديثة واستراتيجيات التعلم المبتكرة. أسعى للحصول "
-    "على فرص تمكنني من تطوير مهاراتي والمساهمة في تعزيز التعليم في المؤسسات التعليمية المتقدمة."
-))
-
-# المهارات الشخصية
-add_section('المهارات الشخصية', [
-    "دمج التكنولوجيا في الفصول الدراسية",
-    "استخدام أدوات الذكاء الاصطناعي لتقديم تعليم مخصص",
-    "مهارات فعالة في التواصل والتعاون",
-    "مدرب معتمد في الأكاديمية المهنية للمعلمين"
-])
-
-# الخبرات المهنية
-add_section('الخبرات المهنية', [
-    "معلم أول دراسات اجتماعية، مدرسة نخل الرسمية لغات (يناير 2023 – حتى الآن)",
-    "معلم تاريخ، مدرسة نخل الثانوية العامة المشتركة (2022 – 2023)",
-    "معلم دراسات اجتماعية، مدرسة رأس النقب للتعليم الأساسي (2015 – 2022)",
-    "معلم دراسات اجتماعية، مدارس الفؤاد الدولية (2013 – 2015)"
-])
-
-# المؤهلات العلمية
-add_section('المؤهلات العلمية', [
-    "ليسانس الآداب والتربية، شعبة التاريخ، جامعة الزقازيق، مصر (2011)",
-    "تقدير: جيد جدًا (%83.29)"
-])
-
-# للتواصل
-add_section('للتواصل', [
-    "الهاتف: +201068717303",
-    "البريد الإلكتروني: Husseinxavi@gmail.com",
-    "العنوان: عمارة 192، الحي 15، العاشر من رمضان، الشرقية، مصر",
-    "الفيسبوك: https://www.facebook.com/hussien.mahdy"
-])
-
-# حفظ الملف
-doc.save('السيرة_الذاتية_حسين_المهدي.docx')
-print("تم إنشاء الملف بنجاح!")
+        <footer>
+            <p>© 2024 حسين المهدي</p>
+        </footer>
+    </div>
+</body>
+</html>
